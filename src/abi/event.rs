@@ -1,14 +1,17 @@
-type EventId = u8;
-type EventData = [u8];
+pub type EventId = String;
+pub type EventData = Vec::<u8>;
 
-struct Event {
-    event_id: EventType,
-    event_data: EventData,
+pub struct Event {
+    event_id: EventId,
+    event_data: EventData
 }
 
 impl Event {
     
     pub fn build_new_event(event_data: EventData) -> Event {
-        Event { 0, event_data }
+        return Event { 
+            event_id: String::new(), 
+            event_data: event_data
+        }
     }
 }
