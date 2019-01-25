@@ -1,7 +1,7 @@
 /// Aplication binary interface
 mod abi;
 /// Blockchain business logic
-mod business_logic;
+pub mod business_logic;
 /// Consensus algoritm
 mod consensus;
 /// Cryptography util
@@ -13,4 +13,4 @@ mod p2p;
 /// Data serializer
 mod serializer;
 /// Data storage, database
-mod storage;
+pub mod storage;

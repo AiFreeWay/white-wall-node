@@ -4,6 +4,7 @@ version = "0.1.0"
 authors = ["vladislav.a <vladyaaifree@gmail.com>"]
 
 [lib]
-crate-type=["staticlib"]
+name = "white_wall_node"
+crate-type=["rlib", "staticlib"]
 
 [dependencies]
