@@ -1,9 +1,14 @@
-use white_wall_node::storage::Storage;
+use business_logic::exceptions::Exception;
+use storage::Storage;
+
 
 struct StorageMock {}
 
 impl Storage for StorageMock {
     
+    fn get_private_key(&self) -> Result<Option<String>, Exception> {
+        return Ok(None)
+    }
 }
 
 #[test]
