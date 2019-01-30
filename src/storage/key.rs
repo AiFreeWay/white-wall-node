@@ -6,7 +6,7 @@ pub struct PrivateKey {
 
 impl PrivateKey {
     
-    pub fn new(data: Vec::<u8>) -> PrivateKey {
+    pub fn new(data: Vec<u8>) -> PrivateKey {
         return PrivateKey {
             key: String::from(""),
             creation_date: 0,

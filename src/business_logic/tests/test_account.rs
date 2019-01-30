@@ -2,7 +2,7 @@ use business_logic::exceptions::Exception;
 use storage::Storage;
 
 
-struct StorageMock {}
+/*struct StorageMock {}
 
 impl Storage for StorageMock {
     
@@ -24,4 +24,4 @@ fn check_no_account() {
 #[test]
 fn check_account_fail() {
     
-}
+}*/

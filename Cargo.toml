@@ -8,3 +8,4 @@ name = "white_wall_node"
 crate-type=["rlib", "staticlib"]
 
 [dependencies]
+rocksdb = "0.11.0"

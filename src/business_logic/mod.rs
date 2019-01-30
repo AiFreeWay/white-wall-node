@@ -14,13 +14,10 @@ pub struct Executor<T> {
 
 impl<T> Executor<T> where T: Storage {
     
-    pub fn is_have_account(&self) -> Result<bool, Exception> {
-        return self.get_storage().get_private_key()
-            .map(|result| result.is_some())
-    }
-    
-    fn get_storage(&self) -> &T {
-        return &self.storage
+    pub fn from(storage: T) -> Executor<T> {
+        return Executor {
+            storage: storage
+        }
     }
 }
 
