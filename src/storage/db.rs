@@ -12,7 +12,7 @@ pub struct Database {
 
 impl Database {
     pub fn new() -> Database {
-        let db = match DB::open_default("path/for/rocksdb/storage") {
+        let db = match DB::open_default("~/WallData/storage") {
             Ok(db) => db,
             Err(e) => panic!(e),
             
@@ -28,10 +28,14 @@ impl Database {
     }
     
     pub fn read(&self, key: Key) -> Option<Value> {
-        return self.get_db()
+        let val_opt = self.get_db()
             .get(key.as_bytes())
-            .ok()
-            .map(|value| value);
+            .unwrap_or(None);
+            
+        return match val_opt {
+            Some(val_vect) => val_vect.to_utf8().map(|val_str| val_str.to_string()),
+            None => None,
+        }    
     }
     
     fn get_db(&self) -> &DB {
