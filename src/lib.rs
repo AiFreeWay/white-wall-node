@@ -1,3 +1,6 @@
+extern crate ed25519_dalek;
+
+
 /// Aplication binary interface
 mod abi;
 /// Blockchain business logic
