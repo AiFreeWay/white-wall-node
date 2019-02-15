@@ -1,6 +1,7 @@
 extern crate rocksdb;
 
 use self::rocksdb::{DB, DBVector, Error};
+use configuration;
 
 
 pub type Key = String;
@@ -12,7 +13,8 @@ pub struct Database {
 
 impl Database {
     pub fn new() -> Database {
-        let db = match DB::open_default("~/WallData/storage") {
+        let database_path = configuration::get_config().get_database_path();
+        let db = match DB::open_default(database_path) {
             Ok(db) => db,
             Err(e) => panic!(e),
             

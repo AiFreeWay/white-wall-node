@@ -5,6 +5,8 @@ extern crate ed25519_dalek;
 mod abi;
 /// Blockchain business logic
 pub mod business_logic;
+/// Configuration module
+mod configuration;
 /// Consensus algoritm
 mod consensus;
 /// Cryptography util

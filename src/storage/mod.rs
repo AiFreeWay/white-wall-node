@@ -1,7 +1,7 @@
-/// Account storage cryptography keys and credentials
-pub mod account_storage;
 /// Database
 pub mod db;
+/// Key storage cryptography key ceed
+pub mod key_storage;
 /// PrivateKey model
 pub mod key;
 
