@@ -1,12 +1,11 @@
-pub trait Configuration {
+pub trait Config {
     fn get_database_path(&self) -> String;
-    
     fn get_key_path(&self) -> String;
 }
 
-struct Config {}
+struct ConfigInternal {}
 
-impl Configuration for Config {
+impl Config for ConfigInternal {
     
     fn get_database_path(&self) -> String {
         return String::from("~/WallData/storage");
@@ -17,6 +16,6 @@ impl Configuration for Config {
     }
 }
 
-pub fn get_config<'a>() -> &'a Configuration {
-    return &Config {}
+pub fn get_config<'a>() -> &'a Config {
+    return &ConfigInternal {}
 }
